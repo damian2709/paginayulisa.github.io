@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me amarías si fuese un gusano?</title>
+    <style>
+        body {
+            background-image: url(https://i1.wp.com/blog.trianglenursery.co.uk/wp-content/uploads/2019/04/Peonies-2962982727-1556554241197.jpeg?fit=1414%2C1414&ssl=1); /* Reemplaza esta URL con la de la imagen de fondo que desees */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #333;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1.5em;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .yes-button {
+            background-color: #8BC34A;
+            color: white;
+        }
+
+        .no-button {
+            background-color: #F44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="question-container">
+        <h1>¿Me amarías si fuese un gusano?</h1>
+        <button class="button yes-button" onclick="yesResponse()">Sí</button>
+        <button class="button no-button" onclick="noResponse()">No</button>
+    </div>
+
+    <script>
+        let noCount = 0;
+
+        function yesResponse() {
+            document.querySelector('.container').innerHTML = "<h1>Te amo inmensamente, Yulisa</h1>";
+        }
+
+        function noResponse() {
+            noCount++;
+            const questionContainer = document.getElementById('question-container');
+            const aCount = 'a'.repeat(noCount);
+            questionContainer.innerHTML = `
+                <h1>¿Estás segur${aCount}?</h1>
+                <button class="button yes-button" onclick="yesResponse()">Sí</button>
+                <button class="button no-button" onclick="noResponse()">No</button>
+            `;
+        }
+    </script>
+</body>
+</html>
